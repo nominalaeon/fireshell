@@ -1,6 +1,6 @@
 # FireShell Changelog
 
-## [2.0.0-alpha](https://github.com/toddmotto/fireshell/releases/tag/v2.0.0) (XX XXX, 20XX)
+## [2.0.0-alpha](https://github.com/toddmotto/fireshell/releases/tag/v2.0.0-alpha) (24 August, 2016)
 
 * Convert task running from Grunt to **Gulp**
     - `gulp-header` replaces `grunt-usebanner`
@@ -10,6 +10,12 @@
 * Remove `sudo` from build commands
 * Removing Google Analytics
     - It's easy to learn and install and Fireshell's docs don't cover its usage.
+
+### TODO
+
+* Find Gulp analog for Grunt Concat's `stripBanners` and `nonull` settings
+* Update README
+* Need help wiring up browser-sync reload for the JavaScript watch
 
 ## [1.1.0](https://github.com/toddmotto/fireshell/releases/tag/v1.1.0) (21 September, 2013)
 
