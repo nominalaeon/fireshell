@@ -1,5 +1,16 @@
 # FireShell Changelog
 
+## [2.0.0-alpha](https://github.com/toddmotto/fireshell/releases/tag/v2.0.0) (XX XXX, 20XX)
+
+* Convert task running from Grunt to **Gulp**
+    - `gulp-header` replaces `grunt-usebanner`
+* Update **jQuery**, **Modernizr**, and **Normalize**
+* Update `.jshintrc`
+    - Changing `latedef` to false
+* Remove `sudo` from build commands
+* Removing Google Analytics
+    - It's easy to learn and install and Fireshell's docs don't cover its usage.
+
 ## [1.1.0](https://github.com/toddmotto/fireshell/releases/tag/v1.1.0) (21 September, 2013)
 
 * Add Roadmap and Contributors to `README.md`

@@ -2,9 +2,10 @@
 
 }
 .logo {
-  margin: -100px 0 0 -84px;
-  @include position(absolute, 50% 0 0 50%);
+  align-items: center;
+  display: flex;
+  justify-content: center;
   img {
-
+    margin: 2rem 0;
   }
 }

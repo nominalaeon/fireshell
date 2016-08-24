@@ -31,7 +31,6 @@ Here are some of the main features of FireShell:
 * Encourages one-file CSS/JS in the view (HTML) for performance
 * Includes jQuery CDN and relative fallback
 * Includes Modernizr and HTML5 Shiv
-* Google Universal Analytics snippet
 * Open source workflow with Grunt.js running on Node.js
 * Two `.command` (Mac OS X) and `.bat` (Windows) files for double-click command-line execution of FireShell
 * Automatic Grunt dependency installation, directory relocation and grunt tasks

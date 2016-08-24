@@ -2,6 +2,7 @@
 
   'use strict';
 
+console.log('TESTING');
   $(function () {
     // FireShell
   });

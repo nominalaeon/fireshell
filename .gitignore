@@ -43,3 +43,7 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
+
+## Grunt files (for now)
+Grunt*
+grunt*
