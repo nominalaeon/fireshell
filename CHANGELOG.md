@@ -4,6 +4,7 @@
 
 * Convert task running from Grunt to **Gulp**
     - `gulp-header` replaces `grunt-usebanner`
+    - `browser-sync` replaces `grunt-contrib-connect`
 * Update **jQuery**, **Modernizr**, and **Normalize**
 * Update `.jshintrc`
     - Changing `latedef` to false
