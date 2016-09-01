@@ -4,24 +4,26 @@
 FireShell utilises open source components running on the Terminal/command-line for it's workflow, you'll need to install Node and Grunt. Here's a walkthrough of how to get a project up and running in minutes. Once Node and Grunt are installed all future projects running Grunt are instant.
 
 1. Install [Node.js](http://nodejs.org/download), [Sass](http://sass-lang.com/tutorial.html) and [Git](http://git-scm.com) on your machine. If you're a Windows user you'll also need to install [Ruby](http://rubyinstaller.org/downloads).
-2. [Install Grunt](http://gruntjs.com/getting-started) using `npm install -g grunt-cli`. You may need to use `sudo` in front of the Grunt install command to give it permissions. For Windows tips with Grunt checkout their [FAQs](http://gruntjs.com/frequently-asked-questions).
+2. [Install Grunt](http://gruntjs.com/getting-started) using `npm install -g grunt-cli`. For Windows tips with Grunt checkout their [FAQs](http://gruntjs.com/frequently-asked-questions).
 3. Fork/Clone/Download the FireShell repository into your machine, you should hopefully see all the files and folders.
 4. Navigate to the `grunt-dev.command` file and double-click it. This will open the Terminal and install the necessary `node_modules` folder, which are FireShell's dependencies. The `grunt-dev.command` file includes a `sudo` prefix so you'll need to enter your password to install.
 5. The `grunt-dev.command` should install all the dependencies, which you can check back to see in your folder, and then run the commands associated with FireShell, and automatically open a new FireShell project running on `localhost:9000`.
-6. From now on, just double-click the `grunt-dev.command` file to automatically run FireShell's Grunt tasks, it's setup using the following script to automatically `cd` you into the correct directory and run the necessary commands:
+6. From now on, just double-click the `gulp-dev.command` file to automatically run FireShell's Grunt tasks, it's setup using the following script to automatically `cd` you into the correct directory and run the necessary commands:
 
 ````sh
 cd "$(dirname "$0")"
 if [ ! -d node_modules ];then
-    sudo npm install
+    npm install
 fi
-grunt
+gulp
 ````
 
 ## How to use FireShell
+
 Using FireShell is very easy, it's based on an easy philosphy of keeping things simple so that anybody can use it, even with zero experience on the command-line. FireShell uses Grunt to manage all the essential tasks for building with the web.
 
 ### Scaffolding
+
 FireShell's scaffolding is lightweight and super easy. It takes into account a build directory of which you'll compile all your necessary code into. It keeps precious development files (raw `.scss` and `.js`) out of deployment, with a view that you'll be deploying just the contents of the `app` folder onto the server.
 
 Once running, FireShell does the following:
@@ -30,10 +32,10 @@ Once running, FireShell does the following:
 2. Listens for changes inside the `src` directory, and compiles the necessary files into the `app` directory, which will then automaticaly livereload or inject changes. CSS changes are injected, all other changes force a page reload.
 
 ### Developing
-Double-click the `grunt-dev.command` file and get developing, Grunt will report any errors with your code back to you on the command-line, even the line number. All CSS and JavaScript is uncompressed in development.
+Double-click the `gulp-dev.command` file and get developing, Grunt will report any errors with your code back to you on the command-line, even the line number. All CSS and JavaScript is uncompressed in development.
 
 ### Deploying
-FireShell ships with a preconfigured build task for Grunt, just fire up the `grunt-build.command` file and your `src` directory files will be compiled into the `app` folder, but this time they're minified and ready to push onto a server environment.
+FireShell ships with a preconfigured build task for Grunt, just fire up the `gulp-build.command` file and your `src` directory files will be compiled into the `app` folder, but this time they're minified and ready to push onto a server environment.
 
 ### Gruntfile.js
 One of the main features of FireShell, setup with dynamic variable names to make it even easier to use, here's where you'll need to edit to add more scripts to be run through Grunt:
@@ -108,24 +110,22 @@ Grunt's Livereload will inject the following script into your HTML for you (not 
 You can navigate to the `watch` portion of the Grunt configuration and specify which files you'd like to livereload once they're changed.
 
 ### Extending Grunt tasks
-If you're including more Grunt tasks in your project, remember to use the `npm install <grunt package> --save-dev` inside your Terminal so that it gets added to your `package.json` file for future dependencies.
+If you're including more Grunt tasks in your project, remember to use the `npm install <gulp package> --save-dev` inside your Terminal so that it gets added to your `package.json` file for future dependencies.
 
-Add new tasks to either the default `grunt` task or `grunt build` task at the end of the `Gruntfile.js`:
+Add new tasks to either the default `gulp` task or `gulp build` task at the end of the `Gruntfile.js`:
 
 ````js
 /**
  * Default task
- * Run `grunt` on the command line
+ * Compile Sass, concatenate scripts, start local server
  */
-grunt.registerTask('default', [
-  'sass:dev',
-  'cssmin:dev',
+gulp.task('default', [
   'bower:dev',
-  'autoprefixer:dev',
+  'css',
   'jshint',
-  'concat:dev',
-  'connect:livereload',
-  'open',
+  'concat',
+  'header',
+  'connect',
   'watch'
 ]);
 ````

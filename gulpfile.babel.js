@@ -227,6 +227,10 @@ gulp.task('watch', () => {
 =            Compiled Tasks            =
 ======================================*/
 
+/**
+ * Default task
+ * Compile Sass, concatenate scripts, start local server
+ */
 gulp.task('default', [
   'bower:dev',
   'css',
@@ -237,7 +241,10 @@ gulp.task('default', [
   'watch'
 ]);
 
-/** Compresses all JS/CSS files */
+/**
+ * Build task
+ * Compresses all JS/CSS files
+ */
 gulp.task('build', [
   'sass:dist',
   'bower:dist',

@@ -31,12 +31,13 @@ Here are some of the main features of FireShell:
 * Encourages one-file CSS/JS in the view (HTML) for performance
 * Includes jQuery CDN and relative fallback
 * Includes Modernizr and HTML5 Shiv
-* Open source workflow with Grunt.js running on Node.js
+* Open source workflow with Gulp.js running on Node.js
 * Two `.command` (Mac OS X) and `.bat` (Windows) files for double-click command-line execution of FireShell
-* Automatic Grunt dependency installation, directory relocation and grunt tasks
+* Automatic Gulp dependency installation, directory relocation and Gulp tasks
+* In-build Babel integration allowing ES6 in Gulpfile.babel.js without requiring pre-transpiling
 * Dynamically appended copyright for JS/CSS
 * Livereloading the browser and file injection upon changes
-* Annotated Gruntfile.js for extending
+* Annotated Gulpfile.babel.js for extending
 * Built-in build script for auto-minification of CSS and JavaScript files for production
 * Pre-setup Sass/SCSS files and folders for baseline project structure and imports
 * Includes .editorconfig for consistent coding styles in IDEs
@@ -67,16 +68,20 @@ Here are some of the main features of FireShell:
 │       ├── vendor
 │       └── style.scss
 ├── docs
-├── grunt-build.command
-├── grunt-build.bat
-├── grunt-dev.command
-├── grunt-dev.bat
-├── package.json
-├── README.md
+├── .babelrc
 ├── .editorconfig
 ├── .gitignore
 ├── .jshintrc
-└── .travis.yml
+├── .travis.yml
+├── bower.json
+├── CHANGELOG.md
+├── gulp-build.command
+├── gulp-build.bat
+├── gulp-dev.command
+├── gulp-dev.bat
+├── gulpfile.babel.js
+├── package.json
+└── README.md
 ````
 
 ## Contributing
@@ -96,13 +101,7 @@ FireShell is maintained by [Todd Motto](//github.com/toddmotto) and it's contrib
 
 Projected roadmap for FireShell and it's subsets builds.
 
-* Integrate Grunt-init to allow for initial project naming (for dynamic CSS/JS banners)
-* LESS.css variant (`less` dir inside `src`), keeping Sass as default but providing Gruntfile.js setup
-* AngularJS FireShell build with MVC scaffolding
-* Bower as package manager
-* Static HTML Includes FireShell build (emulates server-side includes)
-* PHP FireShell spawning a `localhost` with relevant includes
-* Create a Yeoman generator for FireShell
+* AngularJS FireShell build with MV-VM scaffolding
 
 ## License
 

@@ -12,12 +12,6 @@
 * Removing Google Analytics
     - It's easy to learn and install and Fireshell's docs don't cover its usage.
 
-### TODO
-
-* Find Gulp analog for Grunt Concat's `stripBanners` and `nonull` settings
-* Update README
-* Need help wiring up browser-sync reload for the JavaScript watch
-
 ## [1.1.0](https://github.com/toddmotto/fireshell/releases/tag/v1.1.0) (21 September, 2013)
 
 * Add Roadmap and Contributors to `README.md`
